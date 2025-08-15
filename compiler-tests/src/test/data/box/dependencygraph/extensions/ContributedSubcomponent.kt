@@ -14,6 +14,7 @@ abstract class SandboxedActivityScope
   parentScope = SandboxedScope::class,
 )
 interface SandboxedActivityComponent {
+  @GraphExtension.Factory @ContributesTo(SandboxedScope::class)
   @ContributesSubcomponent.Factory
   fun interface Factory {
     fun create(): SandboxedActivityComponent
